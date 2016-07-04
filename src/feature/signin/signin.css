@@ -1,0 +1,44 @@
+.container
+{
+  position:fixed;
+  min-width:450px;
+  height:450px;
+  left:35%;
+  text-align:center;
+  background-color:rgba(16,6,6,0.5);
+  border-radius:4px;
+  margin:0 auto;
+  margin-top:80px;
+}
+a:link, a:visited {
+  color: #3aa3e3;
+  text-decoration: none;
+}
+a:hover{
+  font-size:inherit;
+}
+h1{
+  color:red;
+}
+
+.signin{
+  width:12rem;
+  height:2rem;
+  margin:1px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+.button{
+  padding: 10px 64px 11px;
+  font-size: 1.25rem;
+  background: #000;
+  color:#fff;
+  margin:3px;
+}
+.checkbox{
+  color: #318014;
+  margin: 0 0 .25rem;
+  display: block;
+  font-size: 20px;
+  line-height: 1.5rem;
+}
