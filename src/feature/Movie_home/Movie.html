@@ -1,50 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="movieflix">
 <head>
+  <script src="angular.js"></script>
+  <script src="movie.js"></script>
+  <link rel="stylesheet" href="Movie.css">
     <meta charset="UTF-8">
     <title>MovieFlix</title>
-  <link rel="icon" href="../movieflix.ico">
 
-  <link rel="stylesheet" href="../index/Home.css">
-
-
-
-  <link rel="stylesheet" href="Movie.css">
 </head>
-<body class="body">
-<header><h1>MovieFlix</h1>
-  &nbsp;
-  <nav><a href="" ><div class="box">Sign out</div></a></nav>
-</header><br>
-<br>
-<br>
-<div class="container">
-
-  <div><a><img class="Movieslide all" src="../images/x-men-apocalypse.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/touch_the_wall.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/me-before-you%20.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/barbershop-the-next-cut.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/the-purge-election-year.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/angry-birds.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/our-kind-of-traitor.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/londonhasfallen.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/home.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/zootopia.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/x-men-apocalypse.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/touch_the_wall.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/me-before-you%20.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/barbershop-the-next-cut.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/the-purge-election-year.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/angry-birds.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/our-kind-of-traitor.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/londonhasfallen.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/home.jpg"></a></div>
-  <div><a><img class="Movieslide all" src="../images/zootopia.jpg"></a></div>
-
-</div>
+<body  ng-controller="Mymovieflix as movieCntrl">
+<header>
 <div>
-<footer>
-</footer>
+  <a class="signout box" href="">Sign Out</a>
 </div>
+<h1>MovieFlix</h1>
+</header>
+<div class="sideleft">
+  <input type="text" placeholder="search" ng-model="movietitle"><br>
+  Sort by<Select ng-model="sortcolumn">
+  <option value="-rating">Rating</option>
+  <option value="Title">Title</option>
+</Select><br>
+  Type<Select ng-model="sortcolumn">
+  <option value="-animation">Animation</option>
+  <option value="-action">Action</option>
+  <option value="-realStory">Real Story</option>
+  <option value="-romantic">Romantic</option>
+  <option value="-comedy">comedy</option>
+
+
+</Select>
+
+</div>
+<div class="main">
+ <a ng-repeat="mv in movieCntrl.movie|filter:movietitle|orderBy:sortcolumn" href="{{mv.id}}">
+
+   <img  class="Movieslide all" src="{{mv.image}}"><p class="moviename" ng-model="movie">{{mv.title}}</p>
+
+ </a>
+  </div>
 </body>
 </html>

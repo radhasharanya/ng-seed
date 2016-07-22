@@ -6,6 +6,7 @@
   left:35%;
   text-align:center;
   background-color:rgba(16,6,6,0.5);
+  background-attachment: fixed;
   border-radius:4px;
   margin:0 auto;
   margin-top:80px;

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  ng-app="movieflix">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../angular.js"></script>
+  <script src="../movie.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="pagelayout.css">
+</head>
+<body ng-controller="Mymovieflix" >
+<header>
+  <div>
+    <a class="signout box" href="">Sign Out</a>
+
+  </div>
+  <h1>MovieFlix</h1>
+  <nav>
+
+
+</header>
+<div class="sideleft" >
+<input type="text" placeholder="search" ng-model="movietitle">
+
+
+</div>
+
+<div class="main" >
+   <a ng-repeat="mv in movie |filter:movietitle"><img class="Movieslide all" src="{{mv.image}}"><p>{{mv.Title}}</p></a>
+</div>
+
+
+</body>
+</html>

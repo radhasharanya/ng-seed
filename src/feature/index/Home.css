@@ -22,7 +22,7 @@ header h1, header nav {
   height: 34px;
   box-shadow: 0 0 25px  #000 inset;
   border-radius:6px;
-float:right;
+  float:right;
 
 }
 header::after {
@@ -37,7 +37,7 @@ a:link,a:visited{
   text-decoration: none;
 }
 a:hover{
-  font-size: 30px;
+  font-size: 26px;
 }
 
 

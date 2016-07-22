@@ -10,6 +10,7 @@ header{
   margin-right: 10px;
   margin-top:10px;
   margin-bottom:10px;
+  background-color: #00cc99;
   padding:20px;
 
 }
@@ -25,17 +26,13 @@ header{
 }
 
 .Movieslide  {
-  position: relative;
   height: 300px;
   margin-left: 5px;
   margin-right: 5px;
   margin-top:5px;
   margin-bottom:5px;
   padding:6px;
-  float:left;
 }
-
-
 
 .all {
   box-shadow: 0 0 25px  #333;
@@ -46,16 +43,6 @@ header{
   padding:10px;
   float:right;
 }
-.moviename {
-  position: absolute;
-  color: black;
-  font-size: large;
-  padding:10px;
-  font-family:  verdana, arial;
-  visibility: hidden;
-
-}
-
 
 .box{
   box-shadow: 0 0 25px  #000 inset;
@@ -68,6 +55,9 @@ a:link,a:visited{
 a:hover{
   font-size: 18px;
 }
+
+
+
 .moviename {
   position: absolute;
   color: black;
@@ -75,6 +65,7 @@ a:hover{
   padding:10px;
   font-family:  verdana, arial;
   visibility: hidden;
+
 }
 
 a:hover .moviename{

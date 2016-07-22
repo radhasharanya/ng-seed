@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="movieflix">
+<head>
+  <script src="angular.js"></script>
+  <script src="movie.js"></script>
+  <link rel="stylesheet" href="Movie.css">
+  <meta charset="UTF-8">
+  <title>MovieFlix</title>
+
+</head>
+<body  ng-controller="Mymovieflix as movieCntrl">
+<header>
+  <div>
+    <a class="signout box" href="">Sign Out</a>
+  </div>
+  <h1>MovieFlix</h1>
+</header>
+<div class="sideleft">
+  <input type="text" placeholder="search" ng-model="movietitle"><br>
+  Sort by<Select ng-model="sortcolumn">
+  <option value="-rating">Rating</option>
+  <option value="Title">Title</option>
+</Select><br>
+  Type<Select ng-model="sortcolumn">
+  <option value="-animation">Animation</option>
+  <option value="-action">Action</option>
+  <option value="-realStory">Real Story</option>
+  <option value="-romantic">Romantic</option>
+  <option value="-comedy">comedy</option>
+
+
+</Select>
+
+</div>
+<div class="main">
+
+<div ng-repeat="mv in movieCntrl.movie|filter:movietitle|orderBy:sortcolumn">
+  <div class="button"><button ng-click="movieCntrl.deletemovie($index)">Delete</button></div>
+  <div class="button"><button ng-click="movieCntrl.editmovie(mv)">Edit</button></div>
+
+
+
+  <a href="{{mv.id}}">
+    <img  class="Movieslide all" src="{{mv.image}}">
+    </a>
+
+    <p class="moviename" ng-model="movie">{{mv.title}}</p>
+
+
+  </a>
+</div>
+  <div><button ng-click="movieCntrl.addmovie()">Add </button></div>
+  <div ng-if="movieCntrl.showAddMovieForm">
+    <div>
+      <div><label>title:</label><input ng-model="movieCntrl.movieToBeAdded.title"></div>
+      <div><label>rating:</label><input ng-model="movieCntrl.movieToBeAdded.rating"></div>
+        <div><label>image:</label><input ng-model="movieCntrl.movieToBeAdded.image"></div>
+          <div><label>action:</label><input ng-model="movieCntrl.movieToBeAdded.action"></div>
+            <div><label>realstory:</label><input ng-model="movieCntrl.movieToBeAdded.realstory"></div>
+              <div><label>romantic:</label><input ng-model="movieCntrl.movieToBeAdded.romantic"></div>
+                <div><label>comedy:</label><input ng-model="movieCntrl.movieToBeAdded.comedy"></div>
+                  <div><label>animation:</label><input ng-model="movieCntrl.movieToBeAdded.animation"></div>
+                    <div><label>id:</label><input ng-model="movieCntrl.movieToBeAdded.id"></div>
+                      <div><button ng-click="movieCntrl.submitAddMovieForm()">Submit</button></div>
+
+    </div>
+  </div>
+
+  <div ng-if="movieCntrl.showEditMovieForm">
+    <div>
+      <div><label>title:</label><input ng-model="movieCntrl.movieToBeEdit.title"></div>
+    <div><label>rating:</label><input ng-model="movieCntrl.movieToBeEdit.rating"></div>
+    <div><label>image:</label><input ng-model="movieCntrl.movieToBeEdit.image"></div>
+    <div><label>action:</label><input ng-model="movieCntrl.movieToBeEdit.action"></div>
+    <div><label>realstory:</label><input ng-model="movieCntrl.movieToBeEdit.realstory"></div>
+    <div><label>romantic:</label><input ng-model="movieCntrl.movieToBeEdit.romantic"></div>
+    <div><label>comedy:</label><input ng-model="movieCntrl.movieToBeEdit.comedy"></div>
+    <div><label>animation:</label><input ng-model="movieCntrl.movieToBeEdit.animation"></div>
+    <div><label>id:</label><input ng-model="movieCntrl.movieToBeEdit.id"></div>
+    <div><button ng-click="movieCntrl.saveMovieForm()">save</button></div>
+
+    </div>
+  </div>
+</div>
+<script src="angular.js"></script>
+<script src="movie.js"></script>
+<script src="movie.controller.js"></script>
+<script src="movie.service.js"></script>
+
+<link rel="stylesheet" href="Movie.css">
+</body>
+</html>
